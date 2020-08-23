@@ -5,6 +5,7 @@
   "homepage": "https://jacob-ebey.github.io/hooks-todo",
   "dependencies": {
     "core-js": "^2.5.7",
+    "diffable-html": "^4.0.0",
     "raf": "^3.4.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
