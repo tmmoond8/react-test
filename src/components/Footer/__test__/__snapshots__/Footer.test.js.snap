@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer - Snapshot renders Footer 1`] = `
+<footer
+  className="info"
+>
+  <p>
+    Double-click to edit a todo
+  </p>
+  <p>
+    Created by 
+    <a
+      href="http://github.com/jacob-ebey/"
+    >
+      jacob-ebey
+    </a>
+  </p>
+  <p>
+    Part of 
+    <a
+      href="http://todomvc.com"
+    >
+      TodoMVC
+    </a>
+  </p>
+</footer>
+`;
