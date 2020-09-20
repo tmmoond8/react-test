@@ -1,9 +1,9 @@
 import React, { useCallback, useRef, useState } from "react";
 import useOnClickOutside from "use-onclickoutside";
 
-import useDoubleClick from "../hooks/useDoubleClick";
-import useOnEnter from "../hooks/useOnEnter";
-import useTodos from "../reducers/useTodos";
+import useDoubleClick from "../../hooks/useDoubleClick";
+import useOnEnter from "../../hooks/useOnEnter";
+import useTodos from "../../reducers/useTodos";
 
 export default function TodoItem({ todo }) {
   const [, { deleteTodo, setLabel, toggleDone }] = useTodos(() => null);
@@ -12,18 +12,16 @@ export default function TodoItem({ todo }) {
 
   const onDelete = useCallback(() => deleteTodo(todo.id), [todo.id]);
   const onDone = useCallback(() => toggleDone(todo.id), [todo.id]);
-  const onChange = useCallback(event => setLabel(todo.id, event.target.value), [
-    todo.id
-  ]);
+  const onChange = useCallback(
+    (event) => setLabel(todo.id, event.target.value),
+    [todo.id]
+  );
 
   const handleViewClick = useDoubleClick(null, () => setEditing(true));
-  const finishedCallback = useCallback(
-    () => {
-      setEditing(false);
-      setLabel(todo.id, todo.label.trim());
-    },
-    [todo]
-  );
+  const finishedCallback = useCallback(() => {
+    setEditing(false);
+    setLabel(todo.id, todo.label.trim());
+  }, [todo]);
 
   const onEnter = useOnEnter(finishedCallback, [todo]);
   const ref = useRef();

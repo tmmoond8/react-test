@@ -1,19 +1,22 @@
 import React from "react";
 import { HashRouter, Route } from "react-router-dom";
-import "todomvc-app-css/index.css";
+import useTodos from "../../reducers/useTodos";
 
-import Footer from "../components/Footer";
-import TodoList from "../components/TodoList";
+import TodoList from "./TodoList";
 
-export default function App() {
+export default {
+  title: "TodoList",
+  component: TodoList,
+};
+
+export const Default = () => {
   return (
     <HashRouter>
       <React.Fragment>
         <div className="todoapp">
           <Route path="/:filter?" component={TodoList} />
         </div>
-        <Footer />
       </React.Fragment>
     </HashRouter>
   );
-}
+};
