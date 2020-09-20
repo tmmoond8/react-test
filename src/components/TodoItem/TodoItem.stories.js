@@ -16,17 +16,10 @@ export const Default = () => {
           done: false,
         }}
       />
-    </li>
-  );
-};
-
-export const Done = () => {
-  return (
-    <li class="todo-list" style={{ background: "white" }}>
       <TodoItem
         todo={{
-          id: 1,
-          label: "Have a Breakfast",
+          id: 2,
+          label: "Buy a car",
           done: true,
         }}
       />
